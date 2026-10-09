@@ -28,6 +28,17 @@ const nextConfig: NextConfig = {
       '@countries': '../main/countries.ts',
     },
   },
+
+  // Shared backend modules are bundled from the repository root. Keep their
+  // package resolution anchored to the frontend workspace dependencies.
+  webpack: (config) => {
+    config.resolve ??= {};
+    config.resolve.modules = [
+      path.resolve(process.cwd(), 'node_modules'),
+      ...(config.resolve.modules ?? []),
+    ];
+    return config;
+  },
 };
 
 export default nextConfig;

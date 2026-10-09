@@ -22,7 +22,8 @@
       "@/*": ["./src/*"],
       "@countries": ["../main/countries.ts"],
       "@print/*": ["../shared/print/*"],
-      "@shared/*": ["../shared/*"]
+      "@shared/*": ["../shared/*"],
+      "libphonenumber-js": ["./node_modules/libphonenumber-js"]
     }
   },
   "include": [
@@ -33,5 +34,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "e2e"]
 }
